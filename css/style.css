@@ -6,7 +6,7 @@
 
     --hue-color: 217;
 
-    --firts-color: hsl(var(--hue-color), 69%, 61%);
+    --firts-color: hsl(var(--hue-color), 69%, 40%);
     --firts-color-second: hsl(var(--hue-color), 69%, 61%);
     --firts-color-alt: hsl(var(--hue-color), 57%, 53%);
     --first-color-lighter:hsl(var(--hue-color), 92%, 85%);
@@ -102,6 +102,7 @@ body.dark-theme{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    user-select: none;
 }
 
 html{
@@ -179,7 +180,7 @@ img{
     max-width: 968px;
     height: var(--header-height);
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
 }
 
@@ -289,9 +290,9 @@ img{
     display: block;
     white-space: nowrap;
     border-right: 3px solid;
-    width: 13ch;
+    width: 12ch;
 
-    animation: typing 4s steps(13) infinite alternate;
+    animation: typing 3s steps(12), blink .7s infinite ;
     overflow:hidden;
 }
 
@@ -299,6 +300,9 @@ img{
     from { width: 0}
 }
 
+@keyframes blink{
+    50% {border-color: transparent;}
+}
 
 
 
@@ -596,18 +600,19 @@ img{
 
 .portfolio__content{
     padding: 0 1.5rem;
+    text-align: center;
 }
 
 .portfolio__img{
     width: 265px;
     border-radius: .5rem;
     justify-self: center;
-   /* filter: grayscale(1);*/
 }
 
-/*.portfolio__img:hover{
-    filter: grayscale(0);
-}*/
+.buttons__proyect{
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .portfolio__title{
     font-size: var(--h3-font-size);
@@ -695,6 +700,54 @@ img{
     outline: none;
     padding: .25rem .5rem .5rem 0;
 }
+
+/*footer*/
+
+.footer{
+    padding-top: 2rem;
+}
+
+.footer__container{
+    row-gap: 3.5rem;
+}
+
+.footer__bg{
+    background-color: var(--firts-color-second);
+    padding: 2rem 0 3rem;
+}
+
+.footer__title{
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-0-25);
+}
+
+.footer__subtitle{
+    font-size: var(--small-font-size);
+}
+
+.footer__links{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.footer__link:hover{
+    color: var(--first-color-lighter);
+}
+
+.footer__copy{
+    font-size: var(--smaller-font-size);
+    text-align: center;
+    color: var(--text-color-light);
+    margin-top: var(--mb3);
+}
+
+.footer__title,
+.footer__subtitle,
+.footer__link{
+    color: #fff;
+}
+
 
 .scrollup{
     position: fixed;
@@ -788,9 +841,15 @@ img{
         justify-self: center;
     }
 
+    .home__blob{
+        width: 200px;
+        height: auto;
+    }
+
     .about__container,
     .portfolio__content,
-    .contact__container{
+    .footer__container
+    {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -798,6 +857,14 @@ img{
         display: grid;
         grid-template-columns: .6fr;
         justify-content: center;
+    }
+
+    .contact__container{
+        place-content: center;
+    }
+
+    .contact__form{
+        width: 460px;
     }
 
 }
@@ -826,7 +893,8 @@ img{
     }
 
     .header,
-    .main{
+    .main,
+    .footer__container{
         padding: 0 1rem;
     }
 
@@ -913,6 +981,23 @@ img{
     .portfolio__content{
         align-items: center;
     }
+
+    .footer__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer__bg{
+        padding: 3rem 0 3.5rem;
+    }
+    .footer__links{
+        flex-direction: row;
+        column-gap: 2rem;
+    }
+
+    .footer__copy{
+        margin-top: 4.5rem;
+    }
 }
 
 @media screen and (min-width: 1024px){
@@ -920,10 +1005,15 @@ img{
     .nav{
         max-width: 90%;
     }
+    .home{
+        height: 100vh;
+    }
 
     .nav__
     .header,
-    .main{
+    .main,
+    .footer__container
+    {
         padding: 0;
     }
     .home__data{
@@ -943,7 +1033,7 @@ img{
         justify-self: flex-start;
         position: relative;
         left: 13rem;
-        bottom: -8.5rem;
+        bottom: -6rem;
         
     }
     .social__icon{
@@ -954,6 +1044,12 @@ img{
     .portfolio__content{
         column-gap: 5rem;
     }
+
+    .portfolio__img{
+        height: 160px;
+    }
+    
+    
 
     .swiper-portfolio-icon{
         font-size: 3.5rem;
@@ -967,9 +1063,13 @@ img{
     }
 
     .contact__form{
-        width: 460px;
+        width: 700px;
     }
     .contact__inputs{
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__container.container{
+        max-width: 90%;
     }
 }
