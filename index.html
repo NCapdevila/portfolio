@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="shortcut icon" href="/img/maletin.png" type="image/x-icon">
 
-    <title>Portfolio N.Ramiro Capdevila</title>
+    <title>Portfolio Ramiro Capdevila</title>
 </head>
 
 <body>
@@ -376,7 +376,7 @@
                         
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">Web eCommers</h3>
-                            <p class="portfolio__description">Final frontend project carried out in a group, with a json server</p>
+                            <p class="portfolio__description">Final frontend project carried out in a group, with ReactJs and Json Server with db</p>
                             <a href="https://proyecto-react-numen-b0zq675yy-ncapdevila.vercel.app/" class="button button--flex button--small portfolio__button" id="bnt-port2">
                                 Demo
                                 <i class="uil uil-arrow-right button__icon"></i>
@@ -407,27 +407,29 @@
 
             <div class="contact__container container grid">
 
-                <form name="form-contact" class="contact__form grid" netlify>
+                <form name="form-contact" class="contact__form grid" method="POST" data-netlify="true">
                     <div class="contact__inputs grid">
                         <div class="contact__content">
-                            <label for="" class="contact__label">Name</label>
+                            <label for="name" class="contact__label">Name</label>
                             <input type="text" class="contact__input">
                         </div>
 
                         <div class="contact__content">
-                            <label for="" class="contact__label">Email</label>
+                            <label for="email" class="contact__label">Email</label>
                             <input type="email" class="contact__input">
                         </div>
                     </div>
 
                     <div class="contact__content">
-                        <label for="" class="contact__label">Message</label>
+                        <label for="message" class="contact__label">Message</label>
                         <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
                     </div>
 
                     <div>
-
-                        <input type="submit" value="Send Message" class="button button--flex ">
+                        
+                        <button type="submit" class="button button--flex button__contact">
+                            Send Message <i class="uil uil-message button__icon "></i>
+                        </button>
                         
                     </div>
                 </form>
