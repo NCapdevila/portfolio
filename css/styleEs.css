@@ -396,6 +396,18 @@ img{
     font-weight: var(--font-medium);
 }
 
+.button__portfolio{
+    display: inline-block;
+    background-color: var(--firts-color-alt);
+    color: #fff;
+    padding: 0.3rem 0.5rem;
+    border-radius: .5rem;
+    font-weight: var(--font-medium);
+    border: 0;
+    margin: 0.2rem;
+    font-family: var(--body-font);
+}
+
 .button:hover{
     background-color: var(--firts-color-alt);
 }
