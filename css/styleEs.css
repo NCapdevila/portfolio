@@ -488,8 +488,9 @@ img{
 }
 
 .skills__list{
-    row-gap: 1.5rem;
     padding-left: 2.7rem;
+    display: flex;
+    justify-content: space-around;
 }
 
 .skills__titles{
